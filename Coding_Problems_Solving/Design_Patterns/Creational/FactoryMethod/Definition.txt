@@ -1,0 +1,18 @@
+								 The Factory Method pattern is one of the most commonly used creational design patterns. It provides a way to delegate the instantiation of objects to subclasses, promoting loose coupling and making the code more flexible and reusable.
+
+* Factory Method Pattern
+	Intent: The Factory Method pattern defines an interface for creating an object but allows subclasses to alter the type of objects that will be created.
+	The core idea is to define an interface or abstract class for creating an object, but let the subclasses decide which class to instantiate.
+	The Factory Method relies heavily on inheritance
+
+* When to Use the Factory Method Pattern
+	- When a class cannot anticipate the type of objects it needs to create beforehand.
+	- When a class wants its subclasses to specify the objects it creates.
+	- When you want to delegate the responsibility of instantiating objects to subclasses, leading to better separation of concerns.
+
+* Structure of the Factory Method Pattern
+	- Product: An interface or abstract class defining the object structure.
+	- ConcreteProduct: A class implementing the Product interface.
+	- Creator: An abstract class that declares the factory method. ( creator decide which class to instaniate)
+	- ConcreteCreator: A class implementing the Creator and overriding the factory method to create and return a ConcreteProduct.
+

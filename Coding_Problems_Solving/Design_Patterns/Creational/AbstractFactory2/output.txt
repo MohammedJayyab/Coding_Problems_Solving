@@ -1,0 +1,121 @@
+﻿// AsusManufacturer.cs
+using Coding_Problems_Solving.Design_Patterns.Creational.AbstractFactory2.products;
+
+namespace Coding_Problems_Solving.Design_Patterns.Creational.AbstractFactory2.factories;
+
+public class AsusManufacturer : Company
+{
+    public override IGpu CreateGpu()
+    {
+        return new AsusGpu();
+    }
+
+    public override IMonitor CreateMonitor()
+    {
+        return new AsusMonitor();
+    }
+}
+// Company.cs
+using Coding_Problems_Solving.Design_Patterns.Creational.AbstractFactory2.products;
+
+namespace Coding_Problems_Solving.Design_Patterns.Creational.AbstractFactory2.factories;
+
+public abstract class Company
+{
+    public abstract IGpu CreateGpu();
+
+    public abstract IMonitor CreateMonitor();
+}
+// MsiManufacturer.cs
+using Coding_Problems_Solving.Design_Patterns.Creational.AbstractFactory2.products;
+
+namespace Coding_Problems_Solving.Design_Patterns.Creational.AbstractFactory2.factories;
+
+public class MsiManufacturer : Company
+{
+    public override IGpu CreateGpu()
+    {
+        return new MsiGpu();
+    }
+
+    public override IMonitor CreateMonitor()
+    {
+        return new MsiMonitor();
+    }
+}
+// AsusGpu.cs
+namespace Coding_Problems_Solving.Design_Patterns.Creational.AbstractFactory2.products;
+
+public class AsusGpu : IGpu
+{
+    public void Assymble()
+    {
+        Console.WriteLine("Asus Gpu is assembled");
+    }
+}
+// AsusMonitor.cs
+namespace Coding_Problems_Solving.Design_Patterns.Creational.AbstractFactory2.products;
+
+public class AsusMonitor : IMonitor
+{
+    public void Assymble()
+    {
+        Console.WriteLine("Asus Monitor is assembled");
+    }
+}
+// IGpu.cs
+namespace Coding_Problems_Solving.Design_Patterns.Creational.AbstractFactory2.products;
+
+public interface IGpu
+{
+    public void Assymble();
+}
+// IMonitor.cs
+namespace Coding_Problems_Solving.Design_Patterns.Creational.AbstractFactory2.products;
+
+public interface IMonitor
+{
+    public void Assymble();
+}
+// MsiGpu.cs
+namespace Coding_Problems_Solving.Design_Patterns.Creational.AbstractFactory2.products;
+
+public class MsiGpu : IGpu
+{
+    public void Assymble()
+    {
+        Console.WriteLine("Msi Gpu is assembled");
+    }
+}
+// MsiMonitor.cs
+namespace Coding_Problems_Solving.Design_Patterns.Creational.AbstractFactory2.products;
+
+public class MsiMonitor : IMonitor
+{
+    public void Assymble()
+    {
+        Console.WriteLine("Msi Monitor is assembled");
+    }
+}
+
+
+
+
+
+
+// main 
+
+public class Program
+{
+    public static void Main()
+    {
+      Company msi = new MsiManufacturer();
+      Company asus = new AsusManufacturer();
+
+      IGpu msiGpu = msi.CreateGpu();
+      msiGpu.Assymble();
+
+
+      
+  }
+

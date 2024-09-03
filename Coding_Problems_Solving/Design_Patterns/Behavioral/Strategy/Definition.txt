@@ -1,0 +1,16 @@
+											Strategy Pattern Overview
+
+
+The Strategy pattern is a behavioral design pattern that allows you to define a family of algorithms, encapsulate each one,
+	and make them interchangeable. The key idea is to allow the client to choose an algorithm at runtime.
+This pattern promotes the Open/Closed Principle by enabling the addition of new strategies without altering the existing code.
+
+Intent: The Strategy pattern defines a set of algorithms, encapsulates each one in a separate class,
+	and makes them interchangeable within the context of a specific task.
+
+The client can choose which algorithm to use based on their needs.
+
+When to Use the Strategy Pattern
+	1- When you have multiple related algorithms that may need to be selected at runtime.
+	2- When you want to avoid conditional statements (like if or switch) to select an algorithm.
+	3- When you want to isolate the implementation details of various algorithms from the client code.
