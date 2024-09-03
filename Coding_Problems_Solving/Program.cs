@@ -3,6 +3,7 @@ using Coding_Problems_Solving.Design_Patterns.Creational.AbstractFactory;
 using Coding_Problems_Solving.Design_Patterns.Creational.AbstractFactory2.factories;
 using Coding_Problems_Solving.Design_Patterns.Creational.AbstractFactory2.products;
 using Coding_Problems_Solving.Design_Patterns.Creational.FactoryMethod;
+using Coding_Problems_Solving.Design_Patterns.Singleton;
 using System;
 using System.Linq;
 using System.Runtime.Intrinsics.X86;
@@ -83,6 +84,12 @@ public class Program
         // Create an order and process the payment
         Order order = new Order(paymentStrategy);
         order.ProcessOrder(150.00m);
+
+        // Accessing the Singleton instance
+        Singleton singleton = Singleton.Instance;
+
+        // Calling a method on the Singleton instance
+        singleton.DoSomething();
 
         Console.ReadLine();
         /*   int[] arr = { 1, 23, 8, 100 };
